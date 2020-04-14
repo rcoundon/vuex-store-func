@@ -5,17 +5,26 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    myState: ''
   },
   mutations: {
+    SET_MY_STATE(state, payload) {
+      state.myState = payload;
+      this.myFunc('Hi from the mutation');
+    },
   },
   actions: {
+    setMyState({ commit }, payload) {
+      console.log('setMyState called');
+      commit('SET_MY_STATE', payload);
+    },
   },
   modules: {
   }
 })
 
-store.myFunc = () => {
-  console.log("I'm here!")
+store.myFunc = (text) => {
+  console.log(text)
 }
 
 export default store;

@@ -93,7 +93,7 @@ export default {
     msg: String
   },
   created() {
-    this.$store.myFunc();
+    this.$store.dispatch("setMyState", "test");
   }
 };
 </script>
