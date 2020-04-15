@@ -15,7 +15,7 @@ const store = new Vuex.Store({
   },
   actions: {
     setMyState({ commit }, payload) {
-      console.log('setMyState called');
+      this.myFunc('Hi from the action');
       commit('SET_MY_STATE', payload);
     },
   },
